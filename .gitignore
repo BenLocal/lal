@@ -21,3 +21,4 @@ testdata
 /.idea
 /.trash
 /playground
+.vscode/launch.json

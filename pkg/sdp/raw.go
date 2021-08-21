@@ -182,6 +182,9 @@ func ParseAFmtPBase(s string) (ret AFmtPBase, err error) {
 	items = strings.Split(items[1], ";")
 	for _, pp := range items {
 		pp = strings.TrimSpace(pp)
+		if len(pp) <= 0 {
+			continue
+		}
 		kv := strings.SplitN(pp, "=", 2)
 		if len(kv) != 2 {
 			err = ErrSdp
