@@ -108,6 +108,14 @@ func TestParseFmtPBase(t *testing.T) {
 				"sprop-pps": "RAHAc8GJ",
 			},
 		},
+		"a=fmtp:96 sprop-vps=QAEMAf//AWAAAAMAkAAAAwAAAwA/ugJA; sprop-sps=QgEBAWAAAAMAkAAAAwAAAwA/oAUCAXHy5bpKTC8BAQAAAwABAAADAA8I; sprop-pps=RAHAc8GJ;": {
+			Format: 96,
+			Parameters: map[string]string{
+				"sprop-vps": "QAEMAf//AWAAAAMAkAAAAwAAAwA/ugJA",
+				"sprop-sps": "QgEBAWAAAAMAkAAAAwAAAwA/oAUCAXHy5bpKTC8BAQAAAwABAAADAA8I",
+				"sprop-pps": "RAHAc8GJ",
+			},
+		},
 	}
 	for in, out := range golden {
 		actual, err := ParseAFmtPBase(in)
