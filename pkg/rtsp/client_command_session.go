@@ -541,8 +541,13 @@ func (session *ClientCommandSession) writeCmdReadResp(method, uri string, header
 		if err != nil {
 			return
 		}
+		bodyStr := ""
+		if len(ctx.Body) > 0 {
+			bodyStr = string(ctx.Body)
+		}
+
 		nazalog.Debugf("[%s] < read response. version=%s, code=%s, reason=%s, headers=%+v, body=%s",
-			session.uniqueKey, ctx.Version, ctx.StatusCode, ctx.Reason, ctx.Headers, string(ctx.Body))
+			session.uniqueKey, ctx.Version, ctx.StatusCode, ctx.Reason, ctx.Headers, bodyStr)
 
 		if ctx.StatusCode != "401" {
 			return

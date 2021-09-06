@@ -12,14 +12,13 @@ import (
 	"encoding/base64"
 	"encoding/hex"
 	"strings"
-
-	"github.com/q191201771/lal/pkg/base"
 )
 
 func ParseAsc(a *AFmtPBase) ([]byte, error) {
-	if a.Format != base.RtpPacketTypeAac {
-		return nil, ErrSdp
-	}
+	// aac Format 基本都不一样
+	// if a.Format != base.RtpPacketTypeAac {
+	// 	return nil, ErrSdp
+	// }
 
 	v, ok := a.Parameters["config"]
 	if !ok {
